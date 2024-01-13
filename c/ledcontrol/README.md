@@ -1,6 +1,11 @@
 This program controls the Milk V Duo internal LED via a touch sensor (https://arduinogetstarted.com/tutorials/arduino-touch-sensor).
 
 
+First, you need to disable the blinking script on the Milk V Duo:
+- mv /mnt/system/blink.sh /mnt/system/blink.sh_backup && sync
+- restart the system
+
+
 Connect touch sensor to Milk V Duo:
 - SIG to GP16
 - GND to GND
@@ -8,6 +13,7 @@ Connect touch sensor to Milk V Duo:
 
 
 Connect Milk V Duo via USB C to your computer and do:
+- source ../envsetup.sh
 - make
 - make upload
 - make run
