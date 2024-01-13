@@ -2,3 +2,6 @@ toolchain/
 duo-examples/
 os/
 *~
+*.o
+*/duo-sdk/
+milkvrust/target
