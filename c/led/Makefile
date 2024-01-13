@@ -1,4 +1,4 @@
-TARGET=blink
+TARGET=ledcontrol
 
 ifeq (,$(TOOLCHAIN_PREFIX))
 $(error TOOLCHAIN_PREFIX is not set)
@@ -37,4 +37,12 @@ clean:
 
 .PHONY: upload
 upload:
-	scp -O blink root@192.168.42.1:/root/
+	scp -O $(TARGET) root@192.168.42.1:/root/
+
+.PHONY: run
+run:
+	ssh root@192.168.42.1 './$(TARGET)'
+
+.PHONY: kill
+kill:
+	ssh root@192.168.42.1 'killall $(TARGET)'
